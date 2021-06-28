@@ -1,0 +1,135 @@
+Q1. removeDup.cpp
+
+#include<iostream>
+using namespace std;
+ 
+int removeDup(int num[], int n)
+{
+    if (n==0 || n==1)
+        return n;
+ 
+    int j = 0;
+
+    for (int i=0; i < n-1; i++)
+        if (num[i] != num[i+1])
+            num[j++] = num[i];
+ 
+    num[j++] = num[n-1];
+ 
+    return j;
+}
+ 
+int main()
+{
+    int num[20];
+    int n;
+    cout << "enter size: ";
+    cin >> n;
+    cout << "Enter array elements: ";
+    for(int i=0;i<=n-1;i++)
+    {
+    	cin >> num[i];
+	}
+
+    n = removeDup(num, n);
+ 
+ 	cout << "The new array is :";
+    for (int i=0; i<n; i++)
+        cout << num[i] << " ";
+ 
+    return 0;
+}
+
+
+
+Q2.removeDupKey
+
+#include<iostream>
+using namespace std;
+ 
+int removeDupKey(int num[], int n)
+{
+	int key,i,j,k=0;
+	cout << "Enter the key element :";
+	cin >> key;
+    if (n==0 || n==1)
+        return n;
+ 	for(i=n-1;i>=0;i--)
+ 	{
+ 		if(num[i]!=key)
+ 		{
+ 			j=i;
+ 			break;
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+		if(num[i]==key){
+			num[i]=num[j];
+			j--;
+			k++;
+		}
+	}
+    
+    return k;
+}
+ 
+int main()
+{
+    int num[20];
+    int n;
+    cout << "enter size: ";
+    cin >> n;
+    cout << "Enter array elements: ";
+    for(int i=0;i<=n-1;i++)
+    {
+    	cin >> num[i];
+	}
+
+    int k = removeDupKey(num, n);
+ 
+ 	cout << "The new array is :";
+    for (int i=0; i<n-k; i++)
+        cout << num[i] << " ";
+ 
+    return 0;
+}
+
+
+Q3.reshuffle.cpp
+
+#include<iostream>
+using namespace std;
+
+void reshuffle( int num[],int n)
+{
+	int i=0,j=n/2;
+	int res[n];
+	for(int k=0;k<n;k=k+2)
+	{
+		if(j!=n)
+		{
+			res[k]=num[i];
+			res[k+1]=num[j];
+			i++;
+			j++;
+		}
+	}
+	for(i=0;i<n;i++){
+		cout << res[i] << " ";
+	}
+}
+int main()
+{
+	int num[20];
+	int n;
+	cout << "enter the size: ";
+	cin >> n;
+	cout << "Enter array elements: ";
+    for(int i=0;i<=n-1;i++)
+    {
+    	cin >> num[i];
+	}
+    reshuffle(num,n);
+    return 0;
+}
