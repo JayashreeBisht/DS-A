@@ -4,13 +4,17 @@ using namespace std;
 int findNegative(int grid[][100],int m,int n)
 {
 	int count=0;
-	for(int i=0;i<m;i++)
+	for(int i=m;i>0;i--)
 	{
-		for(int j=0;j<n;j++)
+		for(int j=n;j>0;j--)
 		{
 			if(grid[i][j]<0)
 			{
 				count++;
+			}
+			if(grid[i][j]>0)
+			{
+				break;
 			}
 		}
 	}
