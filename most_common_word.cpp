@@ -42,7 +42,7 @@ int main()
 	for(i=0;i<n;i++)
 	{
 		cin >> temp;
-		ban.push_back(t);
+		ban.push_back(temp);
 	}
 	string ans=commonWord(para,ban);
 	cout << "The most common word is: " << ans;
