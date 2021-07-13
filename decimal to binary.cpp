@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void decTobin(int n, int b)
+void decTobase(int n, int b)
 {
     if (n == 0)
     {
@@ -14,7 +14,7 @@ void decTobin(int n, int b)
     {
     	n += 1;
 	}     
-    decTobin(n, b);
+    decTobase(n, b);
     cout << r < 0 ? r + (b * -1) : r;
     return;
 }
@@ -27,7 +27,7 @@ int main()
     cin >> b;
     if (n != 0)
     {
-        decTobin(n, b);
+        decTobase(n, b);
     }
     else
     {
